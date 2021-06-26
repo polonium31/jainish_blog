@@ -111,7 +111,7 @@ def register():
         return redirect(url_for("home"))
     return render_template("register.html")
 
-@app.route("/")
+
 @app.route('/login', methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -154,7 +154,7 @@ def logout():
     logout_user()
     return redirect(url_for('login'))
 
-
+@app.route("/")
 @app.route('/home')
 def home():
     blogs = db.session.query(BlogPost).all()
