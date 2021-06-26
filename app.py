@@ -11,9 +11,10 @@ from flask_gravatar import Gravatar
 import smtplib
 import os
 
-my_email = "jenu318190@gmail.com"
-my_password = "jenu3191@"
-personal_email = "jenu3181@gmail.com"
+my_email = str(os.environ['EMAIL'])
+my_password = str(os.environ['PASSWORD'])
+personal_email = str(os.environ['PERSONAL'])
+
 
 
 app = Flask(__name__)
@@ -256,4 +257,5 @@ def send_email(name, email, phone, message):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
