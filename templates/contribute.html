@@ -1,0 +1,82 @@
+{% include 'header.html' %}
+
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('/static/img/contribute_page.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+              {% if msg_sent %}
+                <h1>Successfully contributed</h1>
+                  <span class="subheading">Thank you for your valuable contribution</span>
+                {% else: %}
+                <h1>Contribute well</h1>
+                  <span class="subheading">Each contribute counts to grow community.</span>
+              {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <form name="sentMessage" id="contactForm" action="{{ url_for('contribute') }}" method="post">
+            <!-- Article Title -->
+            <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Article Title</label>
+              <input type="text" class="form-control" placeholder="Title" id="name" name="title" required data-validation-required-message="Please enter Article Title.">
+              <p class="help-block text-danger"></p>
+            </div>
+
+          </div>
+            <!-- Article Subtitle -->
+            <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Article Subtitle</label>
+              <input type="text" class="form-control" placeholder="Subtitle" id="name" name="subtitle" required data-validation-required-message="Please enter Article Subtitle.">
+              <p class="help-block text-danger"></p>
+            </div>
+
+          </div>
+            <br>
+            <!-- Article Body -->
+
+            <div class="control-group">
+                <label>Article Details</label>
+            <div class="form-group floating-label-form-group controls">
+
+              <textarea rows="7"  class="ckeditor" name="body"></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+
+            <!--image-->
+            <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Image URL</label>
+              <input type="text" class="form-control" placeholder="Image URL" id="name" name="image" required data-validation-required-message="Please enter Image url.">
+              <p class="help-block text-danger"></p>
+            </div>
+
+          </div>
+
+          <br>
+          <div id="success"></div>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+
+  {% include 'footer.html' %}

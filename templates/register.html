@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Jainish Blog</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/clean-blog.min.css" rel="stylesheet">
+    <script src="/static/ckeditor/ckeditor.js" type="text/javascript"></script>
+
+</head>
+
+
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1531592937781-344ad608fabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'); height:465px; margin-top: -8%;">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-10 col-md-8 mx-auto">
+          <div class="page-heading">
+            <h1>Register</h1>
+            <span class="subheading">Start Contributing to the Blog!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<body>
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mx-auto">
+
+        <form name="sentMessage" id="contactForm" action="{{ url_for('register') }}" method="post">
+            <!-- name-->
+            <div class="control-group">
+              <label>Name</label>
+              <input type="text" class="form-control" placeholder="Enter your name" id="name" name="name" required>
+              <p class="help-block text-danger"></p>
+
+          </div>
+
+            <!-- email -->
+            <div class="control-group">
+
+              <label>Email</label>
+              <input type="email" class="form-control" placeholder="Enter Email ID" id="email" name="email" required>
+              <p class="help-block text-danger"></p>
+
+          </div>
+            <!-- password -->
+            <div class="control-group">
+
+              <label>Password</label>
+              <input type="password" class="form-control" placeholder="Enter password" id="name" name="password" minlength="8" required>
+          </div>
+
+          <br>
+          <div id="success">
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Register</button>
+              <a href="{{ url_for('login') }}" class="btn btn-outline-primary">Login</a>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+
+</body>
+{% include 'footer.html' %}

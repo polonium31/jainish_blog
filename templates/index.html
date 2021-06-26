@@ -1,0 +1,48 @@
+{% include 'header.html' %}
+
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('/static/img/background.jpeg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Jainish Blog</h1>
+            <span class="subheading">A blog site to know how developer see the world.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row" >
+      <div class="col-lg-8 col-md-10 mx-auto" >
+        <div style="padding: 3% 2% 3% 2%;">
+            {% for blog in blogs %}
+          <div class="post-preview"  style="box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px; padding: 3% 2% 1% 2%;">
+
+              <h2 class="post-title">
+
+                <a href="{{ url_for('post',blog_id = blog["id"]) }}"> {{ blog["title"] }}</a>
+              </h2>
+              <h4 class="post-subtitle" style="color: grey; font-size: large;">
+                {{ blog["subtitle"] }}
+              </h4>
+            <p class="post-meta">Posted by
+              <a href="#">{{ blog.author.name }}</a> on {{ blog["date"] }}</p>
+
+          </div>
+        <hr>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+
+{% include 'footer.html' %}

@@ -1,0 +1,77 @@
+{% include 'header.html' %}
+
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('/static/img/edit_page.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+                <h1>Editing the post</h1>
+                  <span class="subheading">Thank you to grow blogging community.</span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <form name="sentMessage" id="contactForm" action="{{ url_for('contribute') }}" method="post">
+            <!-- Article Title -->
+            <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Article Title</label>
+              <input type="text" class="form-control" value="{{ blog.title }}" id="name" name="title" required data-validation-required-message="Please enter Article Title.">
+              <p class="help-block text-danger"></p>
+            </div>
+
+          </div>
+            <!-- Article Subtitle -->
+            <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Article Subtitle</label>
+              <input type="text" class="form-control" value="{{ blog.subtitle}}" id="name" name="subtitle" required data-validation-required-message="Please enter Article Subtitle.">
+              <p class="help-block text-danger"></p>
+            </div>
+
+          </div>
+            <br>
+            <!-- Article Body -->
+
+            <div class="control-group">
+                <label>Article Details</label>
+            <div class="form-group floating-label-form-group controls" >
+
+              <textarea rows="7"  class="ckeditor" name="body" > {{ blog.body}} </textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+
+            <!--image-->
+            <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Image URL</label>
+              <input type="text" class="form-control" value={{ blog.img_url }} id="name" name="image" required data-validation-required-message="Please enter Image url.">
+              <p class="help-block text-danger"></p>
+            </div>
+
+          </div>
+
+          <br>
+          <div id="success"></div>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+
+  {% include 'footer.html' %}
