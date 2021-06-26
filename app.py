@@ -1,5 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, flash, abort, request, send_from_directory
-
+from flask import Flask, render_template, redirect, url_for, flash, abort, request
 from flask_bootstrap import Bootstrap
 from flask_ckeditor import CKEditor
 from datetime import date
@@ -12,15 +11,15 @@ from flask_gravatar import Gravatar
 import smtplib
 import os
 
-my_email = str(os.environ.get('EMAIL'))
-my_password = str(os.environ.get('PASSWORD'))
-personal_email = str(os.environ.get('PERSONAL'))
+my_email = str(os.environ['EMAIL'])
+my_password = str(os.environ['PASSWORD'])
+personal_email = str(os.environ['PERSONAL'])
 
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL",  "sqlite:///blog.db")
+app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 os
 db = SQLAlchemy(app)
@@ -91,10 +90,7 @@ login_manager.init_app(app)
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
 @app.route('/register', methods=["GET", "POST"])
 def register():
     if User.query.filter_by(email=request.form.get('email')).first():
