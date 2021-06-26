@@ -14,7 +14,7 @@ import os
 
 my_email = str(os.environ.get('EMAIL'))
 my_password = str(os.environ.get('PASSWORD'))
-personal_email = str(os.environ('PERSONAL'))
+personal_email = str(os.environ.get('PERSONAL'))
 
 
 
