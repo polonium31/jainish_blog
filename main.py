@@ -18,7 +18,7 @@ personal_email = "jenu3181@gmail.com"
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://jvcisxsxphkdoz:7454cdc4aed171f1c9f2fe8eb7ec2858081fbd53bd9b6d5b6a0ca015452fcf3e@ec2-54-145-224-156.compute-1.amazonaws.com:5432/db1qg2m9sd2d0b'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 os
 db = SQLAlchemy(app)
