@@ -11,17 +11,17 @@ from flask_gravatar import Gravatar
 import smtplib
 import os
 
-my_email = str(os.environ.get('EMAIL'))
-my_password = str(os.environ.get('PASSWORD'))
-personal_email = str(os.environ.get('PERSONAL'))
+my_email = str(os.environ['EMAIL'])
+my_password = str(os.environ['PASSWORD'])
+personal_email = str(os.environ['PERSONAL'])
 
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL","sqlite:///blog.db")
+app.config['SECRET_KEY'] = os.environ["SECRET_KEY"]
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-os
+
 db = SQLAlchemy(app)
 gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False, use_ssl=False,
                     base_url=None)
