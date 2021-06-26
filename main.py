@@ -11,15 +11,15 @@ from flask_gravatar import Gravatar
 import smtplib
 import os
 
-my_email = str(os.environ['EMAIL'])
-my_password = str(os.environ['PASSWORD'])
-personal_email = str(os.environ['PERSONAL'])
+my_email = str(os.environ.get('EMAIL'))
+my_password = str(os.environ.get('PASSWORD'))
+personal_email = str(os.environ.get('PERSONAL'))
 
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL","sqlite:///blog.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 os
 db = SQLAlchemy(app)
