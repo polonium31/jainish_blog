@@ -11,9 +11,10 @@ from flask_gravatar import Gravatar
 import smtplib
 import os
 
-my_email = str(os.environ['EMAIL'])
-my_password = str(os.environ['PASSWORD'])
-personal_email = str(os.environ['PERSONAL'])
+my_email = "jenu318190@gmail.com"
+my_password = "jenu3191@"
+personal_email = "jenu3181@gmail.com"
+
 
 
 
