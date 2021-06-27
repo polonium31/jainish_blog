@@ -11,9 +11,9 @@ from flask_gravatar import Gravatar
 import smtplib
 import os
 
-# my_email = str(os.environ['EMAIL'])
-# my_password = str(os.environ['PASSWORD'])
-# personal_email = str(os.environ['PERSONAL'])
+my_email = str(os.environ['EMAIL'])
+my_password = str(os.environ['PASSWORD'])
+personal_email = str(os.environ['PERSONAL'])
 
 
 
@@ -238,22 +238,22 @@ def delete_post(blog_id):
     return redirect(url_for('home'))
 
 
-# @app.route("/contact", methods=["GET", "POST"])
-# def contact():
-#     if request.method == "POST":
-#         data = request.form
-#         send_email(data["name"], data["email"], data["phone"], data["message"])
-#         return render_template("contact.html", msg_sent=True)
-#     return render_template("contact.html", msg_sent=False)
-#
-#
-# def send_email(name, email, phone, message):
-#     email_message = f"Subject:New Message\n\nName: {name}\nEmail: {email}\nPhone: {phone}\nMessage:{message}"
-#     with smtplib.SMTP("smtp.gmail.com", 587) as connection:
-#         connection.starttls()
-#         connection.login(user=my_email, password=my_password)
-#         connection.sendmail(from_addr=my_email, to_addrs=personal_email, msg=email_message)
-#         print("send")
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        data = request.form
+        send_email(data["name"], data["email"], data["phone"], data["message"])
+        return render_template("contact.html", msg_sent=True)
+    return render_template("contact.html", msg_sent=False)
+
+
+def send_email(name, email, phone, message):
+    email_message = f"Subject:New Message\n\nName: {name}\nEmail: {email}\nPhone: {phone}\nMessage:{message}"
+    with smtplib.SMTP("smtp.gmail.com", 587) as connection:
+        connection.starttls()
+        connection.login(user=my_email, password=my_password)
+        connection.sendmail(from_addr=my_email, to_addrs=personal_email, msg=email_message)
+        print("send")
 
 
 if __name__ == '__main__':
