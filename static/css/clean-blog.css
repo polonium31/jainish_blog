@@ -373,6 +373,14 @@ header.masthead .post-heading .meta a {
   margin-top: 0;
   color: #868e96;
 }
+@media only screen and (min-width: 768px) {
+ .post-preview > .post-meta {
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 0;
+  color: #868e96;
+}
+}
 
 .post-preview > .post-meta > a {
   text-decoration: none;

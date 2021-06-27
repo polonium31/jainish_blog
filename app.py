@@ -158,7 +158,8 @@ def logout():
 @app.route('/home')
 def home():
     blogs = db.session.query(BlogPost).all()
-    return render_template("index.html", blogs=blogs)
+    today_year = date.today().year
+    return render_template("index.html", blogs=blogs,year= today_year)
 
 
 @app.route('/post/<int:blog_id>', methods=["GET", "POST"])
@@ -254,6 +255,7 @@ def send_email(name, email, phone, message):
         connection.login(user=my_email, password=my_password)
         connection.sendmail(from_addr=my_email, to_addrs=personal_email, msg=email_message)
         print("send")
+
 
 
 if __name__ == '__main__':
