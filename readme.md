@@ -17,6 +17,12 @@ Is a Personal blogging website. It covers topic like Technology, Daily-Life rela
 
 [webpage link](https://polonium31.github.io/TinDog-Start-Here/)
 
+![alt text](/website_images/website.gif)
+
+
+![alt text](/website_images/website_1.gif)
+
+## Detailed overview of website
 Login
 ![alt text](/website_images/login.png)
 
