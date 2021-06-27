@@ -25,25 +25,27 @@ Is a Personal blogging website. It covers topic like Technology, Daily-Life rela
 
 ## Detailed overview of website
 Login
+
 ![alt text](/website_images/login.png)
 
 Register
+
 ![alt text](/website_images/register.png)
 
 Forgot Password
+
 ![alt text](/website_images/forgot-password.png)
 
 Home
+
 ![alt text](/website_images/home.png)
 
 About
+
 ![alt text](/website_images/about.png)
 
 Contribute
 ![alt text](/website_images/contribute.png)
-
-Contact
-![alt text](/website_images/contact.png)
 
 Post admin view
 - Edit post Button
@@ -52,6 +54,7 @@ Post admin view
 ![alt text](/website_images/post_admin.png)
 
 Post user view
+
 ![alt text](/website_images/post_user.png)
 
 
