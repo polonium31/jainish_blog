@@ -21,6 +21,7 @@ app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ehpbzpsmpjtqbm:37725e0ff3ad3f58fd6aff1be95544e729ebfaf07e805d78ce25836785622729@ec2-52-4-111-46.compute-1.amazonaws.com:5432/ddfn10oe4eofee'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+
 db = SQLAlchemy(app)
 gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False, use_ssl=False,
                     base_url=None)
